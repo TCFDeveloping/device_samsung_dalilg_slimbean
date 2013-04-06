@@ -1,0 +1,180 @@
+# system.prop for SHV-E120L
+#
+
+rild.libpath=/system/lib/libril-qc-qmi-1.so
+rild.libargs=-d /dev/smd0
+ro.config.lte=true
+ro.telephony.default_network=10
+telephony.lteOnCdmaDevice=1
+telephony.lteOnGsmDevice=1
+ro.ril.shutdown=true
+ro.ril.hsxpa=1
+ro.ril.gprsclass=10
+ro.config.ehrpd=true
+ro.config.svlte1x=true
+ro.cdma.subscribe_on_ruim_ready=true
+
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+ril.subscription.types=NV,RUIM
+
+dev.pm.dyn_samplingrate=1
+
+#system props for the MM modules
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-fma2dp=false
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+
+ro.vendor.extension_library=/system/lib/libqc-opt.so
+
+lpa.decode=true
+#lpa.decode=false
+lpa.use-stagefright=true
+
+#
+# system props for the data modules
+#
+ro.use_data_netmgrd=true
+persist.data_netmgrd_nint=16
+
+#
+# system props for SD card emulation of emmc partition
+#
+ro.emmc.sdcard.partition=17
+
+#system props for time-services
+persist.timed.enable=true
+
+# System props for audio
+#persist.audio.fluence.mode=endfire
+#persist.audio.vr.enable=false
+persist.audio.fluence.mode=broadside
+persist.audio.vr.enable=false
+persist.audio.hp=true
+af.resampler.quality=255
+af.resample=48000
+ro.semc.sound_effects_enabled=true
+ro.semc.xloud.supported=true
+persist.service.xloud.enable=1
+
+#
+# system prop for opengles version
+#
+# 131072 is decimal for 0x20000 to report version 2
+ro.opengles.version=131072
+
+#
+# System prop for sending transmit power request to RIL during WiFi hotspot on/off
+#
+ro.ril.transmitpower=true
+
+# system prop for adb_notification
+persist.adb.notify=0
+
+# system prop for usb_notification
+persist.usb_mass_storage.notify=0
+
+#
+# Needed to match behavior of stock rom
+#      D/PHONE: mDoesRilSendMultipleCallRing=false
+#
+ro.telephony.call_ring.multiple=0
+
+# For 720x1280 panel
+ro.sf.lcd_density=280
+
+# Fields for custom RIL
+# MAX PROP NAME is 31 chars --|
+ro.telephony.ril_class=SamsungQualcommUiccRIL
+telephony.lteOnGsmDevice=1
+
+# System property for SIM
+persist.radio.apm_sim_not_pwdn=1
+
+# System prop for qmi adb log
+persist.radio.adb_log_on=1
+
+# System proverty for sys info indication
+persist.radio.add_power_save=1
+
+# System proverty snapshot disable
+persist.radio.snapshot_disabled=1
+
+# notify vold we have internal and external sd
+ro.additionalmounts=/mnt/emmc
+ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
+
+# set mass storage to default
+persist.sys.usb.config=mass_storage
+
+# Qualcomm display settings
+debug.qctwa.statusbar=1 
+debug.qctwa.preservebuf=1 
+debug.qc.hardware=true
+com.qc.hardware=true
+ro.hdmi.enable=true
+
+# Improve touch responsiveness through Hardware Rendering
+
+debug.sf.hw=1
+persist.sys.ui.hw=1
+persist.sys.composition.type=gpu
+debug.performance.tuning=1
+video.accelerate.hw=1
+debug.egl.profiler=1
+debug.egl.hw=1
+debug.composition.type=gpu
+debug.mdpcomp.logs=0
+ro.sf.compbypass.enable=1
+dev.pm.dyn_samplingrate=1
+debug.overlayui.enable=1
+debug.enabletr=true
+ro.max.fling_velocity=4000
+
+# Improve Voice Call clarity
+ro.ril.enable.amr.wideband=1
+
+# Increase Voice Call Audio Adjustment Steps.
+ro.config.vc_call_steps=20
+
+# Ril
+ro.ril.hsxpa=5
+ro.ril.gprsclass=34
+ro.ril.hep=1
+ro.ril.hsdpa.category=28
+ro.ril.enable.3g.prefix=1
+#ro.ril.htcmaskw1.bitmask=4294967295
+#ro.ril.htcmaskw1=268449905
+ro.ril.hsupa.category=9
+#ro.ril.def.agps.mode=2
+ro.ril.def.agps.feature=1
+ro.ril.enable.sdr=1
+ro.ril.enable.gea3=1
+ro.ril.enable.fd.plmn.prefix=23402,23410,23411
+ro.ril.disable.power.collapse=0
+ro.ril.enable.a52=1
+ro.ril.enable.a53=1
+ro.ril.enable.dtm=1
+
+
+# Additional Tweaks
+ro.config.hw_camera_resize=true
+ro.config.dualmic=true
+ro.service.swiqi.supported=true
+persist.service.swiqi.enable=1
+#ro.ril.disable.power.collapse=1
+ro.ril.def.agps.mode=2
+ro.camera.preview=true
+ro.ril.enable.korea.stk=1
+persist.sys.strictmode.visual=0
+persist.sys.strictmode.disable=1
+
